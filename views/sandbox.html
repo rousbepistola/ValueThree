@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Localetti Dashboard</title>
+
+    <!-- BOOTSTRAP -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script async src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script async src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script async src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+    <!-- FONTAWESOME -->
+    <script src="https://kit.fontawesome.com/3d3ae9b37d.js" crossorigin="anonymous"></script>
+
+    <!-- GOOGLE FONT -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+
+    <style>
+        body{
+            font-family: 'Montserrat', sans-serif;
+            background-color: #eeeeee;
+        }
+
+        /* navbar */
+        .sidebar {
+            height:100vh;
+            background:linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.9)), url("https://images.pexels.com/photos/1604202/pexels-photo-1604202.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            box-shadow: 5px 7px 25px #999;
+        }
+        
+        .bottom-border {
+            border-bottom: 1px groove #eee;
+        }
+
+        .sidebar-link:hover {
+            background-color: #444;
+            border-radius: 5px;;
+        }
+        .sidebar-link {
+            transition: all 0.4s;
+        }
+
+        .current {
+            background-color: #f44336;
+            border-radius: 7px;
+            box-shadow: 2px 5px 10px #333;
+            transition: all 0.3s;
+        }
+
+        .current:hover {
+            background-color: salmon;
+            border-radius: 7px;
+            box-shadow: 2px 5px 20px #333;
+            transform: translateY(-5px);
+        }
+
+        .search-input {
+            background: transparent;
+            border: none;
+            border-radius: 0%;
+            border-bottom: 2px solid #999;
+            transition: all 0.4s;
+        }
+
+        .search-input:focus {
+            background: transparent;
+            box-shadow: none;
+            border-bottom: 2px solid #dc3545;
+        }
+
+        .search-button {
+            border-radius: 50%;
+            transition: all 0.7s;
+        }
+
+        .search-button:hover {
+            background-color: transparent;
+            transform: translateY(-3px);
+        }
+
+        .icon-parent {
+            position:relative;
+        }
+
+        .icon-bullet::after {
+            content:"";
+            position:absolute;
+            top:7px;
+            left:45px;
+            height: 12px;
+            width:12px;
+            background-color: rgba(250, 128, 114, 0.671);
+            border-radius:50%;
+        }
+
+        
+
+        @media (max-width:768px){
+            .sidebar {
+                position:static;
+                height:auto;
+            }
+
+            .top-navbar {
+                position:static;
+            }
+        }
+
+        /* end navbar */
+    </style>
+    
+</head>
+<body>
+    <nav class="navbar navbar-expand-md navbar-light">
+        <button class="navbar-toggler ml-auto mb-2 bg-light" type="button" data-toggle="collapse" data-target="#myNavbar">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <div class="container-fluid">
+                <div class="row">
+                    <!-- sidebar -->
+                    <div class="col-lg-3 col-xl-2 col-md-4 sidebar fixed-top">
+                        <a  href="" class="navbar-brand text-white d-block mx-auto text-center py-3 mb-4 bottom-border">Localetti</a>
+                        <div class="bottom-border pb-3">
+                            <img src="https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" 
+                            alt="Image on Profile dashboard" width="50" height="50" class="rounded-circle mr-3">
+                            <a href="#" class="text-white">Rous Epistola</a>
+                        </div>
+                        <ul class="navbar-nav flex-column mt-4">
+                            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 current"><i class="fa fa-home text-light fa-lg "></i>Dashboard</a></li>
+
+                            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-user text-light fa-lg "></i>Profile</a></li>
+
+                            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-envelope text-light fa-lg "></i>Inbox</a></li>
+
+                            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-shopping-cart text-light fa-lg "></i>Sales</a></li>
+
+                            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-chart-line text-light fa-lg "></i>Analytics</a></li>
+
+                            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-chart-bar text-light fa-lg "></i>charts</a></li>
+
+                            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-table text-light fa-lg "></i>Tables</a></li>
+
+                            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-wrench text-light fa-lg "></i>Settings</a></li>
+
+                            <li class="nav-item"><a href="#" class="nav-link text-white p-3 mb-2 sidebar-link"><i class="fa fa-file-alt text-light fa-lg "></i>Documentation</a></li>
+                        </ul>
+                    </div>
+                    <!-- end of sidebar -->
+
+
+
+                    <!-- topNav -->
+                    <div class="col-lg-9 col-xl-10 col-md-8 ml-auto bg-dark fixed-top py-2 top-navbar">
+                        <div class="row align-item-center">
+                            <div class="col-md-4">
+                                <h4 class="text-light text-uppercase mb-0">Dashboard</h4>
+                            </div>
+                            <div class="col-md-5">
+                                <form action="" id="location-form">
+                                    <div class="input-group">
+                                        <input type="text" id="location-input" placeholder="Search neighborhood . . ." class="form-control search-input text-white">
+                                        <button class="btn btn-info" type="submit"><i class="fas fa-search text-danger search-button"></i></button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="col-md-3">
+                                <ul class="navbar-nav">
+                                    <ul class="nav-item ml-md-auto icon-parent"><a href="#" class="nav-link icon-bullet"><i class="fas fa-sign-out-alt text-muted fa-lg"></i>Logout</a></ul>
+                                </ul>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!-- endOdTopNav -->
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <!-- MODAL  41MIN  https://www.youtube.com/watch?v=XK-H0kQW54Y      BACKGROUND: https://www.pexels.com/photo/grayscale-photography-of-road-1604202/    PEXEL-->
+
+    <!-- END OF MODAL -->
+
+
+
+    <!-- CARDS -->
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-9 col-md-8 ml-auto">
+                    <div class="row pt-5 mt-3 mb-5">
+
+                        <div class="col-lg-1"></div>
+
+                        <div class="col-sm-12 col-md-12 col-lg-10 pd-2">
+                            <div class="card">
+                                <div class="card-body">
+                                    <i class="fas fa-map fa-4x text-info"><h2>Location Details</h2></i>
+                                    <div id="geometry"></div>
+                                    <div class="text-left text-secondary">
+                                        <p id="formatted-address"></p>
+                                        <p id="address-components"></p>
+                                    </div>
+                                    <div class="text-left text-secondary">
+                                        <hr>
+                                        <h4>Air Quality In the area</h4>
+                                        <p><strong>BRIEF EXPLANATION ON A TOOLTIP?</strong></p>
+                                        <h6> AQI:29</h6>
+                                        <h6>aqiInfo:"{"category": "Good", "pollutant": "PM2.5", "concentration": 6}"</h6>
+                                        <h6>updatedAt:"2020-03-25T16:05:28.000Z"</h6>
+                                        <h6>countryCode:"CA"</h6>
+                                        <h6>placeName:"Downtown Toronto (Rosedale)"</h6>
+                                        <h6>postalCode:"M4W"</h6>
+                                        <h6>state:"Ontario"</h6>
+                                        <h6>city:"Ontario ON"</h6>
+                                        <h6>division:"Toronto"</h6>
+                                        <h6>lat:43.6827</h6>
+                                        <h6>lng:-79.373</h6>
+                                        <h6><strong>OVERALL QUALITY</strong></h6>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-success" role="progressbar" style="width: 75%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+
+                                    <div class="text-left text-secondary">
+                                        <hr>
+                                        <h4>Crime Rate and Numbers</h4>
+                                        <p><strong>BRIEF EXPLANATION ON A TOOLTIP?</strong></p>
+                                        <h6>updatedAt:"2020-03-25T16:05:28.000Z"</h6>
+                                        <h6>countryCode:"CA"</h6>
+                                        <h6>postalCode:"M4W"</h6>
+                                        <h6>state:"Ontario"</h6>
+                                        <h6>city:"Ontario ON"</h6>
+                                        <h6>division:"Toronto"</h6>
+                                        <h6>lat:43.6827</h6>
+                                        <h6>lng:-79.373</h6>
+                                        <h6><strong>OVERALL QUALITY</strong></h6>
+                                        <div class="progress">
+                                            <div class="progress-bar bg-warning" role="progressbar" style="width: 33%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-1"></div>
+
+                        <!-- <div class="col-sm-6 pd-2">
+                            
+                        </div>
+
+                        <div class="col-sm-6 pd-2">
+                            
+                        </div> -->
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- END OF CARDS -->
+
+    <!-- JQUERY CDN-->
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+
+
+
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        // geocode();
+
+
+        // GET LOCATION FORM
+        var locationForm = document.getElementById('location-form');
+
+        // listen for submit
+        locationForm.addEventListener('submit', geocode)
+
+
+
+        function geocode(e){
+            // prevent actual submit
+            e.preventDefault();
+            
+
+            let location = document.getElementById('location-input').value;
+            // let location = '70 bradstone sq scarborough';
+            axios.get('https://maps.googleapis.com/maps/api/geocode/json', {
+                params:{
+                    address: location,
+                    key: 'AIzaSyCFpf4F_1DzzQmZrf3xsNggEibIQixO0k8'
+                }
+            })
+            .then(function(response){
+                // log full response
+                console.log(response);
+
+                // formatted address
+                let formattedAddress = response.data.results[0].formatted_address;
+                let formattedAddressOutput = `
+                    <ul class='list-group'>
+                        <li class='list-group-item'>${formattedAddress}</li>
+                    </ul>
+                `;
+
+                // ADDRESS COMPONENTS
+                let addressComponents = response.data.results[0].address_components;
+                let addressComponentsOutput = '<ul class="list-group">';
+                for(let i = 0; i < addressComponents.length; i++){
+                    addressComponentsOutput += `
+                        <li class='list-group-item'>${addressComponents[i].types[0]} :  ${addressComponents[i].long_name}</li>
+                    `;
+                }
+
+                addressComponentsOutput += '</ul>'
+
+
+                
+                // Geometry
+                let lat = response.data.results[0].geometry.location.lat;
+                let lng = response.data.results[0].geometry.location.lng;
+                let geometryOutput = `
+                    <ul class='list-group'>
+                        <li class='list-group-item'><strong>Latitude: </strong>${lat}</li>
+                        <li class='list-group-item'><strong>Longitude: </strong>${lng}</li>
+                    </ul>
+                `;
+
+
+                // OUTPUT TO APP
+                document.getElementById('formatted-address').innerHTML = formattedAddressOutput;
+                document.getElementById('address-components').innerHTML = addressComponentsOutput;
+                document.getElementById('geometry').innerHTML = geometryOutput;
+
+
+            })
+            .catch(function(error){
+                console.log(error);
+            })
+            
+        }
+    </script>
+    
+</body>
+</html>

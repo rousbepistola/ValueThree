@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/b32f7587-c1b1-4b0b-85f8-a5e51d53fe0e/resourceGroups/Node/providers/Microsoft.Web/sites/vaught",
+    "appService.deploySubpath": ""
+}
