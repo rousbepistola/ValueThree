@@ -15,7 +15,7 @@ router.post('/', function(req, res, next) {
         let myInfoLog = {email:req.body.email};
         
 
-        dbo.collection("userInfo").findOne(myInfoLog, function(err, data){
+        dbo.collection("vthree").findOne(myInfoLog, function(err, data){
             try{
                 if(data.email){
                     okayToGenerate = true;

@@ -88,6 +88,14 @@
         .top-navbar {
             position:static;
         }
+
+        #logoutNav {
+            margin: 3rem auto;
+            
+        }
+        #logoutText {
+            color:black;
+        }
     }
 
     /* end navbar */

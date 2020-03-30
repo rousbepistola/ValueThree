@@ -24,7 +24,7 @@ router.post('/', function(req, res, next){
         let dbo = db.db("projectOne");
         let myinfo = {email:logemail};
 
-        dbo.collection("userInfo").findOne(myinfo, function(err, data){
+        dbo.collection("vthree").findOne(myinfo, function(err, data){
 
             try {
                     // comparing hashed password

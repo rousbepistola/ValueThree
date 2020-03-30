@@ -46,7 +46,7 @@ router.post('/', function(req, res, next){
     let myInfoLog = {email:ssn.userEmail};
     
                   // CODE BLOCK USER AUTHENTICATION
-    dbo.collection("userInfo").findOne(myInfoLog, function(err, data){
+    dbo.collection("vthree").findOne(myInfoLog, function(err, data){
       // This block checks if a user is already existing. if it exists, userExist variable is set to true 
       // and the if statement(userExist==false) below wouldn't run thus preventing existing user from signing up again
       try {
@@ -66,7 +66,7 @@ router.post('/', function(req, res, next){
           let dbo = db.db("projectOne");
 
         let myInfo = {fname:ssn.firstName, lname:ssn.lastName, email:ssn.userEmail, pass:hashed};
-              dbo.collection("userInfo").insertOne(myInfo, function(err, data){
+              dbo.collection("vthree").insertOne(myInfo, function(err, data){
                 if(err) throw err;
                 console.log("collection inserted");
 
@@ -96,7 +96,7 @@ router.post('/', function(req, res, next){
   //         let myInfoLog = {email:ssn.userEmail, pass:ssn.userPass};
 
   //       let myInfo = {fname:ssn.firstName, lname:ssn.lastName, email:ssn.userEmail, pass:hashed};
-  //             dbo.collection("userInfo").insertOne(myInfo, function(err, data){
+  //             dbo.collection("vthree").insertOne(myInfo, function(err, data){
   //               if(err) throw err;
   //               console.log("collection inserted");
 

@@ -27,7 +27,7 @@ router.get('/', function(req, res, next) {
             let dbo = db.db("projectOne");
   
           let myInfo = {email:req.body.email};
-                dbo.collection("userInfo").updateOne(myInfo,{$set: {pass: hashed}}, function(err, data){
+                dbo.collection("vthree").updateOne(myInfo,{$set: {pass: hashed}}, function(err, data){
                   if(err) throw err;
                   console.log("password updated");
                   db.close();
