@@ -24,8 +24,9 @@ html(lang='en')
           .row
             // sidebar
             .col-lg-3.col-xl-2.col-md-4.sidebar.fixed-top
-              a.navbar-brand.text-white.d-block.mx-auto.text-center.py-3.mb-4.bottom-border(href='') Value
-                sup 3
+              a.navbar-brand.text-white.d-block.mx-auto.text-center.py-3.mb-4.bottom-border(href='') 
+                img(src="/images/v3logo.png", alt="Value 3 site logo" style="width:5rem")
+                h5 Value Three
               .bottom-border.pb-3
                 //- img.rounded-circle.mr-3(src='https://images.pexels.com/photos/614810/pexels-photo-614810.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260', alt='Image on Profile dashboard', width='50', height='50')
                 h3.text-white #{name}
@@ -40,9 +41,9 @@ html(lang='en')
                     i.fa.fa-user.text-light.fa-lg.mr-2
                     | Profile Settings (WIP)
                 li.nav-item
-                  a.nav-link.text-white.p-3.mb-2.sidebar-link(href='#')
+                  a.nav-link.text-white.p-3.mb-2.sidebar-link(href='/contact')
                     i.fa.fa-envelope.text-light.fa-lg.mr-2
-                    | Inbox (WIP)
+                    | Contact Us
             // end of sidebar
             // topNav
             .col-lg-9.col-xl-10.col-md-8.ml-auto.bg-dark.fixed-top.py-2.top-navbar
@@ -54,8 +55,8 @@ html(lang='en')
                   ul.navbar-nav
                     ul.nav-item.ml-md-auto.icon-parent
                       a.nav-link.icon-bullet.text-white(href='logout')
-                        i.fas.fa-sign-out-alt.fa-lg.text-danger
-                          span.text-danger Logout
+                        i.fas.fa-sign-out-alt.fa-lg.text-light
+                          span.text-light Logout
 
 
     section

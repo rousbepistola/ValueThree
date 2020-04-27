@@ -13,7 +13,8 @@ var loginRouter = require('./routes/login');
 var logoutRouter = require('./routes/logout');
 var forgotpassRouter = require('./routes/forgotpass');
 var generatepassRouter = require('./routes/generatepass');
-
+var contactRouter = require('./routes/contact');
+var mailerRouter = require('./routes/mailer');
 
 var app = express();
 
@@ -40,6 +41,8 @@ app.use('/login', loginRouter);
 app.use('/logout', logoutRouter);
 app.use('/forgotpass', forgotpassRouter);
 app.use('/generatepass', generatepassRouter);
+app.use('/contact', contactRouter);
+app.use('/mailer', mailerRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

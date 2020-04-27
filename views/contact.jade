@@ -3,7 +3,7 @@ html(lang='en')
   head
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1.0')
-    title Signup
+    title V3
     // BOOTSTRAP
     script(src='https://code.jquery.com/jquery-3.4.1.slim.min.js', integrity='sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n', crossorigin='anonymous')
     script(src='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js', integrity='sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo', crossorigin='anonymous')
@@ -18,17 +18,17 @@ html(lang='en')
       font-family: 'Maven Pro', sans-serif;
       }
       .bg{
-       background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url("https://images.pexels.com/photos/3815585/pexels-photo-3815585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+      background:linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7)), url("https://images.pexels.com/photos/3815585/pexels-photo-3815585.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
       background-repeat: no-repeat;
       width:100%;
-      height: 100vh;
-      background-attachment:fixed
+      background-attachment:fixed;
+      height:auto
       }
       .form-container{
       color:whitesmoke;
       border: 1px solid lightslategray;
       padding: 50px 60px;
-      margin-top: 20vh;
+      margin-top: 10vh;
       -webkit-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
       -moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
       box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
@@ -43,6 +43,12 @@ html(lang='en')
         -moz-box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
         box-shadow: -1px 4px 26px 11px rgba(0,0,0,0.75);
       }
+      #bannerHeader{
+          background: url("/images/contactBanner.png"); 
+          height: 25rem; background-size:contain; 
+          background-repeat:no-repeat; 
+          background-position: center center
+      }
   body.bg
     // Navigation
     nav.navbar.navbar-expand-lg.navbar-dark#navStyle(style='background: rgba(10,10,10,0.7)')
@@ -56,10 +62,10 @@ html(lang='en')
           li.nav-item.mx-2
             a.nav-link(href='/') 
                 h6.my-auto Home
-          li.nav-item.mx-2.active
+          li.nav-item.mx-2
             a.nav-link(href='signup') 
                 h6.my-auto Signup
-          li.nav-item.mx-2
+          li.nav-item.mx-2.active
             a.nav-link(href='contact') 
                 h6.my-auto Contact us
           li.nav-item.mx-2
@@ -68,32 +74,70 @@ html(lang='en')
     // navigation end
     .container-fluid
       .row
-        .col-xs-12.col-md-4.col-sm-2
-        .col-xs-12.col-md-4.col-sm-8
-          // form start
-          form.form-container(action='profile', role='form', method="post")
-            h3.text-center Register
-            .form-group.text-secondary
-              label(for='fname') First Name
-              input#fname.form-control(name='fname',type='name', required='')
-            .form-group.text-secondary
-              label(for='lname') Last Name
-              input#lname.form-control(name='lname',type='name', required='')
-            .form-group.text-secondary
-              label(for='exampleInputEmail1') Email address
-              input#exampleInputEmail1.form-control(name='email',type='email', aria-describedby='emailHelp', required='')
-            .form-group.text-secondary
-              label(for='exampleInputPassword1') Password
-              input#exampleInputPassword1.form-control(name='pass',type='password',required='')
-            .form-group.text-secondary
-              button.btn.btn-success.btn-block(type='submit') Submit
-            small
-              a(href='/' style="text-decoration:none") Already have an account
-          // form end
-        .col-xs-12.col-md-4.col-sm-2
+
+        .col-md-2.col-lg-2.col-xl-2
+
+        .col-xs-12.col-sm-12.col-md-8.col-lg-8.col-xl-8.mt-3#bannerHeader(style='')
+
+        .col-md-2.col-lg-2.col-xl-2
+      
+      .row.my-5
+        .col(style:'height:15vh')
+            .alert.alert-warning.alert-dismissible.fade.show.col-md-6.mx-auto.text-center#emailNotification(role='alert')
+                strong#emailAlert #{mailer}
+                button.close(type='button', data-dismiss='alert', aria-label='Close')
+                    span(aria-hidden='true') ×
+
+
+      .row.my-5
+        .col-lg-1.col-xl-1
+
+
+        .col-xs-12.col-sm-12.col-md-12.col-lg-5.col-xl-5.text-center
+            img.py-5(src="/images/v3logo.png", alt="Logo of Value 3", style='width:25rem')
+            h1.text-light V3 - The stock-market eagle
+
+
+        .col-xs-12.col-sm-12.col-md-12.col-lg-5.col-xl-5
+            
+            form.form-container.py-5(action='/mailer', role='form', method="post")
+                p.text-justify(style='color:salmon;')
+                h3.text-center Contact Us!
+
+                .form-group.text-secondary
+                label(for='exampleInputEmail1') Email address
+                input.form-control(type='email', aria-describedby='emailHelp', name='email')
+
+                .form-group.text-secondary
+                label Name
+                input.form-control(type='text', name='name')
+                
+                .form-group.text-secondary
+                label Message
+                textarea.form-control(type='text', name='message')
+                
+                .row
+                    .col
+                    .col.p-auto.text-center
+                        button.btn.btn-success.my-3(type='submit') Submit
+                    .col
+        .col-lg-1.col-xl-1
 
       .row(style='height:20vh')
-    .container-fluid
+
       .row(style='height:20vh;background:rgba(220,220,220,0.2)')
         .col.text-center.my-auto.py-auto
             h6.text-light Footer Placeholder
+
+    
+
+    script.
+      let emailAlert = document.getElementById('emailAlert')
+      let emailNotification = document.getElementById('emailNotification');
+      if(emailAlert.innerHTML == "Thank you for contacting us! We will respond as soon as we can"){
+      emailNotification.style.visibility = "visible";
+      } else {
+      emailNotification.style.visibility = "hidden";
+      }
+
+            
